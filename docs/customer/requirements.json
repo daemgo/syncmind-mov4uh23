@@ -1,0 +1,323 @@
+{
+  "currentVersion": "v0.1",
+  "status": "draft",
+  "versions": [{
+    "version": "v0.1",
+    "createdAt": "2026-05-07T00:00:00.000Z",
+    "trigger": "cold-start",
+    "inputSummary": "基于客户咨询+档案推演",
+    "changeSummary": ["从档案推演6条需求", "客户原话确认1条需求"]
+  }],
+  "current": {
+    "salesInput": {
+      "salesPerson": "",
+      "lastUpdated": "2026-05-07",
+      "overallAssessment": {
+        "customerIntent": "客户明确提出基于钉钉Teambition实施IPD研发管理体系",
+        "projectUrgency": "中等，窗口期约12-18个月",
+        "budgetSituation": "未知",
+        "competitionStatus": "未知",
+        "winProbability": "待评估",
+        "keyObstacles": ["IPD流程与现有研发流程整合", "Teambition平台能力边界"],
+        "confidenceLevel": "高"
+      },
+      "keyPersons": [
+        { "name": "", "title": "技术研发负责人/CTO" },
+        { "name": "", "title": "项目经理" }
+      ],
+      "realNeeds": {
+        "explicitNeeds": ["基于钉钉Teambition的IPD研发管理"],
+        "implicitNeeds": ["研发流程标准化", "跨部门协同效率提升", "项目进度可视化"],
+        "suspectedNeeds": ["数据安全管控", "与现有EDA工具集成"]
+      },
+      "decisionFactors": {
+        "primaryFactor": "研发效率提升",
+        "secondaryFactors": ["流程规范化", "协同效率"],
+        "dealBreakers": []
+      },
+      "notes": "客户明确指定使用钉钉Teambition平台，需在此基础上设计IPD解决方案。Fabless芯片设计公司，研发人员是核心资产。",
+      "concerns": ["Teambition能否满足IC设计行业特殊需求", "IPD实施对现有研发节奏影响", "数据安全合规性"],
+      "suggestions": ["建议采用轻量化IPD框架分阶段落地", "优先实现项目管理可视化"]
+    },
+    "sources": {
+      "meetings": [],
+      "documents": [],
+      "communications": [{ "date": "2026-05-07", "type": "客户咨询", "content": "需要基于钉钉Teambition做IPD研发管理" }],
+      "observations": []
+    },
+    "needs": [
+      {
+        "id": "REQ-001",
+        "category": "functional",
+        "title": "基于Teambition的IPD流程管理",
+        "description": "在钉钉Teambition平台上落地IPD集成产品开发流程，包括概念阶段、计划阶段、开发阶段、验证阶段、发布阶段等阶段门管理，以及各阶段的技术评审点设置和交付物定义",
+        "priority": "must",
+        "confidence": "high",
+        "source": { "type": "customer-stated", "detail": "客户咨询原话", "raw": "需要基于钉钉Teambition做IPD研发管理" },
+        "status": "active",
+        "module": "IPD流程",
+        "relatedPainPoints": ["项目管理"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-002",
+        "category": "functional",
+        "title": "项目里程碑与进度跟踪",
+        "description": "实现芯片研发项目的里程碑设定、进度实时跟踪、资源分配与冲突预警，支持多项目并行管理，提升项目经理对研发进度的可视化管控能力",
+        "priority": "must",
+        "confidence": "high",
+        "source": { "type": "profile-inference", "detail": "档案痛点：多项目并行导致研发进度不透明", "raw": null },
+        "status": "active",
+        "module": "项目管理",
+        "relatedPainPoints": ["项目管理"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-003",
+        "category": "functional",
+        "title": "芯片设计版本管理",
+        "description": "建立芯片设计文件的版本控制体系，支持设计文件的变更记录、版本对比、回滚操作，提升IP核复用率，减少因版本混乱导致的设计返工",
+        "priority": "must",
+        "confidence": "high",
+        "source": { "type": "profile-inference", "detail": "档案痛点：芯片设计版本管理混乱，IP核复用率低", "raw": null },
+        "status": "active",
+        "module": "研发管理",
+        "relatedPainPoints": ["研发管理"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-004",
+        "category": "functional",
+        "title": "跨部门协同审批流",
+        "description": "构建跨部门协同审批机制，支持研发、市场、生产、财务等多角色参与的产品开发团队(PDT)协同工作，实现评审意见收集、审批签字、决策记录等流程电子化",
+        "priority": "must",
+        "confidence": "medium",
+        "source": { "type": "industry-pattern", "detail": "IPD核心要素：跨部门团队", "raw": null },
+        "status": "active",
+        "module": "协同管理",
+        "relatedPainPoints": ["项目管理"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-005",
+        "category": "functional",
+        "title": "技术评审与阶段门管理",
+        "description": "定义并执行IPD技术评审流程，包括概念评审、计划评审、设计评审、验证评审等，设置明确的评审通过标准和交付物清单，确保各阶段决策有据可依",
+        "priority": "must",
+        "confidence": "medium",
+        "source": { "type": "industry-pattern", "detail": "IPD核心要素：技术评审和阶段门管理", "raw": null },
+        "status": "active",
+        "module": "质量管理",
+        "relatedPainPoints": ["研发管理"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-006",
+        "category": "functional",
+        "title": "研发文档管理与知识库",
+        "description": "建立统一的研发文档管理平台，规范芯片设计文档的命名、归档、借阅流程，积累设计规范和经验知识，提升新人上手速度和知识传承效率",
+        "priority": "should",
+        "confidence": "medium",
+        "source": { "type": "profile-inference", "detail": "档案痛点：文档规范性不足，影响新人上手速度", "raw": null },
+        "status": "active",
+        "module": "知识管理",
+        "relatedPainPoints": ["研发管理"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-007",
+        "category": "security",
+        "title": "设计文件权限控制与数据安全",
+        "description": "实现芯片设计文件的分级权限管理，支持按项目、角色、人员维度的访问控制，提供敏感文件的操作审计，防止核心IP外泄",
+        "priority": "must",
+        "confidence": "high",
+        "source": { "type": "profile-inference", "detail": "档案痛点：芯片设计文件外泄风险高，IP保护意识不足", "raw": null },
+        "status": "active",
+        "module": "数据安全",
+        "relatedPainPoints": ["数据安全"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      },
+      {
+        "id": "REQ-008",
+        "category": "integration",
+        "title": "供应链协同与质量追溯",
+        "description": "与Foundry、封测厂建立信息协同通道，记录晶圆交期、质量检测数据、良率数据，支持质量问题的全链路追溯，满足IPD中对供应商协同的要求",
+        "priority": "should",
+        "confidence": "medium",
+        "source": { "type": "profile-inference", "detail": "档案痛点：与Foundry、封测厂的交期协调困难", "raw": null },
+        "status": "active",
+        "module": "供应链协同",
+        "relatedPainPoints": ["供应链协同"],
+        "firstVersion": "v0.1",
+        "lastUpdated": "v0.1",
+        "history": []
+      }
+    ],
+    "users": [
+      { "role": "研发负责人/CTO", "description": "技术决策者，负责IPD流程审核和研发资源调配", "mainTasks": ["IPD流程设计审核", "技术评审决策", "研发资源调配"] },
+      { "role": "项目经理", "description": "项目管理者，负责项目计划制定与跟踪", "mainTasks": ["项目计划制定与跟踪", "里程碑管理", "跨部门协调"] },
+      { "role": "芯片设计工程师", "description": "核心执行者，负责芯片设计与仿真", "mainTasks": ["芯片设计与仿真", "设计版本管理", "设计文档编写"] },
+      { "role": "验证工程师", "description": "质量保障者，负责设计验证", "mainTasks": ["芯片设计验证", "测试用例管理", "问题追踪"] },
+      { "role": "质量工程师", "description": "质量管理者，负责IPD阶段评审组织", "mainTasks": ["IPD阶段评审组织", "质量标准制定", "质量问题追溯"] },
+      { "role": "CEO/总经理", "description": "最终决策者，负责战略方向和预算审批", "mainTasks": ["战略方向决策", "重大投资审批"] }
+    ],
+    "scope": {
+      "inScope": ["IPD流程框架设计与Teambition落地", "芯片项目全生命周期管理", "阶段门管理与技术评审流程", "跨部门PDT团队协同", "任务分解与里程碑管理", "设计文档版本管理", "文件权限控制"],
+      "outOfScope": ["EDA工具原生集成", "芯片设计文件的大文件存储（需专业PLM）", "晶圆厂ERP系统对接", "独立财务记账模块"],
+      "futureScope": ["与专业IC设计PLM系统集成", "AI辅助决策", "供应商协同门户"],
+      "phases": [
+        { "phase": 1, "name": "基础项目管理", "duration": "4-6周", "goals": ["Teambition空间搭建", "任务看板和甘特图配置", "里程碑模板定义"] },
+        { "phase": 2, "name": "IPD流程落地", "duration": "6-8周", "goals": ["IPD阶段门流程设计", "技术评审流程配置", "审批流引擎设置"] },
+        { "phase": 3, "name": "数据安全加固", "duration": "3-4周", "goals": ["权限体系设计", "敏感文件标识", "操作审计配置"] }
+      ],
+      "priorityMatrix": []
+    },
+    "constraints": {
+      "budget": { "total": "", "flexibility": "可商议" },
+      "timeline": { "expectedStart": "", "expectedGoLive": "" }
+    },
+    "successCriteria": {
+      "operational": ["项目进度可视化覆盖率达到100%", "IPD技术评审按期完成率≥90%", "设计文档版本错误导致的返工减少50%"],
+      "business": ["芯片项目平均研发周期缩短15-20%", "关键里程碑准时率达到85%以上"]
+    },
+    "solutionDirection": {
+      "overallApproach": "基于钉钉Teambition平台，采用轻量化IPD框架分阶段落地，Phase1聚焦项目管理可视化，Phase2深化流程管控",
+      "recommendedApproach": null,
+      "technicalDirection": "利用Teambition的任务看板、甘特图、审批流等原生功能，结合自定义字段和脚本扩展实现IPD阶段门",
+      "implementationStrategy": "分三阶段实施：项目管理→流程落地→安全加固",
+      "nextSteps": ["客户访谈确认需求细节", "Teambition功能评估", "制定实施方案"]
+    },
+    "risksAndAssumptions": {
+      "risks": [
+        { "description": "Teambition平台能力边界与IC设计管理需求存在差距", "impact": "高", "mitigation": "前期充分评估Teambition功能，识别gap并制定扩展方案" },
+        { "description": "IPD流程与现有研发习惯冲突，导致执行阻力", "impact": "高", "mitigation": "分阶段推进，Phase1聚焦价值最高的管理诉求" },
+        { "description": "跨部门协同文化不足，PDT团队运作流于形式", "impact": "中", "mitigation": "获得管理层支持，明确各角色职责和考核机制" }
+      ],
+      "assumptions": [
+        { "description": "客户已具备钉钉Teambition企业版license或愿意采购", "impact": "高" },
+        { "description": "客户管理层支持IPD变革，愿意投入资源推动", "impact": "高" },
+        { "description": "Teambition的API和扩展能力可满足基本的集成需求", "impact": "中" }
+      ],
+      "dependencies": ["客户确认Teambition版本和可用模块", "确定项目关键干系人和决策流程", "客户提供现有研发流程文档"]
+    },
+    "pendingQuestions": [
+      {
+        "id": "PQ-001",
+        "category": "业务",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "客户目前使用的项目管理工具是什么？使用深度如何？",
+        "purpose": "评估客户现有基础和变革阻力",
+        "expectedDirection": "了解客户对项目管理软件的熟悉度",
+        "targetPerson": "项目经理/研发负责人",
+        "relatedNeedIds": ["REQ-001", "REQ-002"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-002",
+        "category": "业务",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "客户对IPD流程的熟悉程度如何？是否已有初步的阶段门定义？",
+        "purpose": "确定流程设计起点和工作量",
+        "expectedDirection": "了解客户对IPD的认知深度",
+        "targetPerson": "研发负责人/CTO",
+        "relatedNeedIds": ["REQ-001", "REQ-005"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-003",
+        "category": "预算",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "客户是否有明确的预算范围和期望的项目交付时间？",
+        "purpose": "制定合理的分阶段实施方案",
+        "expectedDirection": "获取预算和时间线信息",
+        "targetPerson": "CEO/总经理",
+        "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-004",
+        "category": "技术",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "客户的研发团队规模和项目并行数量是多少？",
+        "purpose": "评估系统规模和复杂度",
+        "expectedDirection": "确定系统用户数和并发需求",
+        "targetPerson": "项目经理",
+        "relatedNeedIds": ["REQ-002"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-005",
+        "category": "技术",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "客户对设计文件版本管理的具体需求是什么？是否已有Git等版本管理工具？",
+        "purpose": "明确版本管理的范围和深度",
+        "expectedDirection": "确定版本管理方案",
+        "targetPerson": "研发负责人",
+        "relatedNeedIds": ["REQ-003"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-006",
+        "category": "决策",
+        "priority": "必问",
+        "stage": "screening",
+        "question": "谁是项目的最终决策人？项目审批需要经过哪些层级？",
+        "purpose": "制定有效的沟通和推进策略",
+        "expectedDirection": "明确决策链",
+        "targetPerson": "CEO/总经理",
+        "relatedNeedIds": [],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      },
+      {
+        "id": "PQ-007",
+        "category": "技术",
+        "priority": "选问",
+        "stage": "deep-dive",
+        "question": "客户是否期望与现有的CAD/EDA工具进行数据集成？具体是哪些工具？",
+        "purpose": "评估集成需求和实现复杂度",
+        "expectedDirection": "确定集成范围",
+        "targetPerson": "研发负责人",
+        "relatedNeedIds": ["REQ-003"],
+        "status": "pending",
+        "answer": null,
+        "resolvedInVersion": null
+      }
+    ],
+    "completionRate": {
+      "overall": 65,
+      "byCategory": { "business": 80, "functional": 75, "technical": 50 },
+      "blockers": ["预算确认", "关键干系人访谈"]
+    }
+  }
+}
